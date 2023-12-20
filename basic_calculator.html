@@ -1,0 +1,127 @@
+<!-- A basic calculator ( HTML elements only )  -->
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <script>
+        // Addtion function : two operations displays answer
+        var inOpOne = true
+        var operandOne = ""
+        var operandTwo = ""
+        var symbol = ""
+        function append(number) {
+            if(inOpOne) {
+                operandOne = operandOne + number
+            } else {
+                operandTwo = operandTwo + number
+            }
+            console.log("here")
+        }
+
+        // Symbol dispatches future operation
+        function add(){
+            if(inOpOne) {
+                inOpOne = false
+            }
+            symbol = "+"
+        }
+
+        function sub() {
+            if(inOpOne) {
+                inOpOne = false
+            }
+            symbol = "-"
+        }
+
+        function mult() {
+            if(inOpOne) {
+                inOpOne = false
+            }
+            symbol = "*"
+        }
+
+        // Assume no zero out code here as well
+        function div() {
+            if(inOpOne) {
+                inOpOne = false
+            }
+            symbol = "/"
+        }
+
+        function equals() {
+            var numOne = Number(operandOne)
+            var numTwo = Number(operandTwo)
+            var result = 0
+            console.log(symbol);
+            console.log(numOne)
+            console.log(numTwo)
+            switch(symbol) {
+                case "+":
+                    result = numOne + numTwo
+                    break
+                case "-":
+                    result = numOne - numTwo
+                    break
+                case "*":
+                    result = numOne * numTwo
+                    break
+                case "/":
+                    result = numOne / numTwo
+                    break
+            }
+            document.getElementById("answer").value = result.toString()
+            opOne = true
+            operandOne = ""
+            operandTwo = ""
+        }
+
+    </script>
+    <style>
+        #HeadingOne {
+            text-align: center;
+            color: blue;
+            background-color: yellowgreen;
+        }
+        .op {
+            display: block;
+        }
+         /* Flexbox for wrapper of elements */
+        #wrapper {
+            display:flex;
+        }
+    </style>
+    <title>A basic calculator application.</title>
+    <!-- Scope down to two operands single operation mode -->
+</head>
+<body>
+    <h1 id="HeadingOne"> A basic calculator application</h1>
+    <div id="wrapper">
+        <div id="numbers">
+            <div id="buttonGroupOne">
+                <button id="buttonOne" onclick="append(1)">1</button>
+                <button id="buttonTwo" onclick="append(2)">2</button>
+                <button id="buttonThree" onclick="append(3)">3</button>
+            </div>
+            <div id="buttonGroupTwo">
+                <button id="buttonFour" onclick="append(4)">4</button>
+                <button id="buttonFive" onclick="append(5)">5</button>
+                <button id="buttonFive" onclick="append(6)">6</button>
+            </div>
+            <div id="buttonGroupThree">
+                <button id="buttonSeven" onclick="append(7)">7</button>
+                <button id="buttonEight" onclick="append(8)">8</button>
+                <button id="buttonNine" onclick="append(9)">9</button>
+            </div>
+            <div id="answerBox">
+                <!-- Inline CSS input field here? HUH? -->
+                <input type="number" id="answer" placeholder="NUM" style="width:40px"/>
+                <button id="buttonEqual" onclick="equals()">=</button>
+            </div>
+        </div>
+        <div id="buttonGroupOps">
+            <button class="op" id="buttonAdd" onclick="add()">+</button>
+            <button class="op" id="buttonSubtract" onclick="sub()">-</button>
+            <button class="op" id="buttonMultiply" onclick="mult()">*</button>
+            <button class="op" id="buttonDiv" onclick="div()">/</button>
+        </div>
+    </div>
+</body>
