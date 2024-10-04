@@ -152,7 +152,19 @@
                 maximum = 3
                 var randomIdx = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
                 var gameWord = limitedDictionary[randomIdx]
+                var letterFreq = dict()
+                for(letter in gameWord){
+                    if(!letterFreq.has(letter)){
+                        letterFreq[letter] = 0;
+                    }
+                    letterFreq[leter] += 1
+                }
                 var lettersSelected = set()
+                numValidLettersTyped = 0
+            }
+
+            function isLetter(str) {
+                return str.length === 1 && str.match(/[a-z]/i);
             }
 
             function resetGame() {
@@ -162,8 +174,23 @@
 
             function execSingleMove() {
                 if(numAvailMoves > 0){
-
-                    numAvailMoves -= 1
+                    formLetter = "letter"
+                    var textForm = document.getElementById(formLetter)
+                    var letterVal = textForm.value
+                    if(isLetter(letterVal)){
+                        if(letterFreq.has(letterVal)){
+                            freqChar = letterFreq[letterVal]
+                            numValidLettersTyped += freqChar
+                            letterFreq.delete(letterVal)
+                            if(numValidLettersTyped == targetLength){
+                                console.log("Player won the game!!!")
+                            }
+                        } else {
+                            numAvailMoves -= 1
+                        }
+                    } else {
+                        console.log("Entered an invalid letter for gameplay!!!")
+                    }
                 } 
             }
         </script>
@@ -188,7 +215,7 @@
             <div class="line9"></div>
             <div class="line10"></div>
         </div>
-        <div id="enterText"  class="container">
+        <div id="enterText" class="container">
             <form>
                 <label for="character">Enter Character:</label>
                 <br/>
@@ -197,9 +224,6 @@
             </form>
             <button id="enterLetter" onClick="execSingleMove()">Enter Letter</button>
             <button id="resetGame" onClick="resetGame()">Reset Game State</button>
-        </div>
-        <div id="gameFinish">
-
         </div>
     </body>
     <footer>
