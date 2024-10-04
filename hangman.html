@@ -1,9 +1,16 @@
 <!-- hangman html ( partial build ) -->
+ <!-- refactor much later with SVG ! -->
 <!DOCTYPE html>
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
         <style>
             .h1Style {
                 font-size: xx-large;
@@ -72,6 +79,24 @@
                 width: 5px;
                 background-color: black;
             }
+            .line7 {
+                /* remove from document flow */
+                position: absolute;
+                top: 325px;
+                left: 225px;
+                width: 50px;
+                height: 5px;
+                background-color: black;
+            }
+            .line8 {
+                /* remove from document flow */
+                position: absolute;
+                top: 325px;
+                left: 275px;
+                width: 50px;
+                height: 5px;
+                background-color: black;
+            }
             .line6 {
                 /* remove from document flow */
                 position: absolute;
@@ -81,19 +106,76 @@
                 width: 5px;
                 background-color: black;
             }
-
+            .line9 {
+                /* remove from document flow */
+                position: absolute;
+                top: 370px;
+                left: 225px;
+                width: 50px;
+                height: 5px;
+                background-color: black;
+            }
+            .line10 {
+                /* remove from document flow */
+                position: absolute;
+                top: 370px;
+                left: 275px;
+                width: 50px;
+                height: 5px;
+                background-color: black;
+            }
+            #enterText {
+                position: absolute;
+                top:500px;
+                left:250px;
+            }
+            #enterLetter, #resetGame {
+                text-align: center;
+                color: red;
+                font-weight: 1000;
+            }
         </style>
         <script>
+            // (1) randomizing words 
+            // (2) Select from a legitimatic English Lang dictionary ( integration )
+            // (3) Build for just single gameplay.
+            initiateGame()
+
+            function initiateGame() {
+                limitedDictionary = [
+                    "harisrid",
+                    "killbill",
+                    "volumexa",
+                    "hangmann"
+                ]
+                minimum = 0
+                maximum = 3
+                var randomIdx = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+                var gameWord = limitedDictionary[randomIdx]
+                var lettersSelected = set()
+            }
+
+            function resetGame() {
+
+                numAvailMoves = 7
+            }
+
+            function execSingleMove() {
+                if(numAvailMoves > 0){
+
+                    numAvailMoves -= 1
+                } 
+            }
         </script>
     </head>
     <body>
         <!-- How to avoid nested divs in HTML code? -->
-        <div id="gameIntro">
+        <div id="gameIntro" class="container">
             <h1 class="h1Style"> A very basic hangman game </h1>
             <p>Ready player one?</p>
             <p>Goal : Find the hidden letter in enough turns before the hangman hangs!</p>
         </div>
-        <div id="game">
+        <div id="game" class="container">
             <div class="line1"></div>
             <div class="line2"></div>
             <div class="line3"></div>
@@ -101,6 +183,20 @@
             <div class="head"></div>
             <div class="line5"></div>
             <div class="line6"></div>
+            <div class="line7"></div>
+            <div class="line8"></div>
+            <div class="line9"></div>
+            <div class="line10"></div>
+        </div>
+        <div id="enterText"  class="container">
+            <form>
+                <label for="character">Enter Character:</label>
+                <br/>
+                <input type="text" id="letter" name="hangLetter" value="#">
+                <br/>
+            </form>
+            <button id="enterLetter" onClick="execSingleMove()">Enter Letter</button>
+            <button id="resetGame" onClick="resetGame()">Reset Game State</button>
         </div>
         <div id="gameFinish">
 
