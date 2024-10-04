@@ -168,8 +168,10 @@
             }
 
             function resetGame() {
-
                 numAvailMoves = 7
+                numValidLettersTyped = 0
+                // clear the set
+                lettersSelected = set()
             }
 
             function execSingleMove() {
@@ -177,7 +179,7 @@
                     formLetter = "letter"
                     var textForm = document.getElementById(formLetter)
                     var letterVal = textForm.value
-                    if(isLetter(letterVal)){
+                    if(isLetter(letterVal) && !lettersSelected.has(letterVal)){
                         if(letterFreq.has(letterVal)){
                             freqChar = letterFreq[letterVal]
                             numValidLettersTyped += freqChar
@@ -188,6 +190,7 @@
                         } else {
                             numAvailMoves -= 1
                         }
+                        lettersSelected.add(letterVal)
                     } else {
                         console.log("Entered an invalid letter for gameplay!!!")
                     }
@@ -207,6 +210,7 @@
             <div class="line2"></div>
             <div class="line3"></div>
             <div class="line4"></div>
+            <!-- it's at the hard that we start doing animations! -->
             <div class="head"></div>
             <div class="line5"></div>
             <div class="line6"></div>
