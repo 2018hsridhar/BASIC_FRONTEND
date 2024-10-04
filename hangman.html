@@ -148,6 +148,11 @@
                     "volumexa",
                     "hangmann"
                 ]
+                var appendageClassIds = ["head","line5","line6","line7","line8","line9","line10"]
+                for(appendageClass in appendageClassIds){
+                    appSelector = "." + appendageClass
+                    $(appSelector).hide()
+                }
                 minimum = 0
                 maximum = 3
                 var randomIdx = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
@@ -172,6 +177,11 @@
                 numValidLettersTyped = 0
                 // clear the set
                 lettersSelected = set()
+                appendagePtr = 0
+                for(appendageClass in appendageClassIds){
+                    appSelector = "." + appendageClass
+                    $(appSelector).hide()
+                }
             }
 
             function execSingleMove() {
@@ -188,6 +198,9 @@
                                 console.log("Player won the game!!!")
                             }
                         } else {
+                            appSelector = "." + appendageClassIds[appendagePtr]
+                            appendagePtr += 1
+                            $(appSelector).show()
                             numAvailMoves -= 1
                         }
                         lettersSelected.add(letterVal)
