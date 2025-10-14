@@ -1,16 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import { createRoot } from 'react-dom/client'
+import { StrictMode } from 'react';
 
-// Props = properties
-// Properties = data that is passed to a component
-// Props are read-only
-// Props are immutable
-// Props are used to pass data from parent to child component
-// Props are used to customize a component
-// Props are used to make a component reusable
-// Props are used to make a component dynamic
-// Props are used to make a component configurable
 function Greeting(props){
   return <h1>Hello, {props.name}!</h1>;
 }
