@@ -1,0 +1,64 @@
+<!-- A basic web counter that can increment and decrement a counter on a click -->
+<!-- 30 minutes to code up a basic global counter app -->
+<DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>A basic single page web counter</title>
+        <link rel="stylesheet" href="counter-styling.css" />
+        <!-- <script src="counter.js"> -->
+        <script src ="counter.js"></script>
+    </head>
+
+    <body>
+        <h1 style="text-align: left;">A basic HTML web counter</h1>
+        <!-- two back-to-back text elements -->
+        <!-- Inner HTML captcha? -->
+        <!-- Span wrapping JS value -->
+        <p><b>Current Count : </b><span id="globalCount">0</p> 
+        <!-- Convert to free form later -->
+
+        <!-- Div hiding p elements here? -->
+        <!-- Default clickable buttons -->
+        <!-- Values for buttons? -->
+        <div class="vertical-btn-group">
+            <button class="button" type="button" id="incrButton" onclick="incrementCountByOne()">Increment Count By One</button>
+            <button class="button" type="button" id="decrButton" onclick="decrementCountByOne()">Decrement Count By One</button>
+            <button class="button" type="button" id="resetButton" onclick="resetCountToZero()">Reset The Counter To Zero</button>
+        </div>
+    </body>
+    </html>
+</DOCTYPE>
+<script>
+// Basic Javascript for increment-decrement counter application
+var globalCountValue = 0;
+// Basic onclick event triggers
+function incrementCountByOne() {
+    globalCountValue++;
+    document.getElementById("globalCount").innerHTML= globalCountValue;
+}
+function decrementCountByOne(){
+    globalCountValue--;
+    document.getElementById("globalCount").innerHTML= globalCountValue;
+}
+
+function resetCountToZero(){
+    globalCountValue = 0;
+    document.getElementById("globalCount").innerHTML= globalCountValue;
+}
+</script>
+<stylesheet>
+  .vertical-btn-group {
+    display: block; /* Vertical display of buttons group */
+}
+.button {
+    /* Huh other class here. */
+    display: block;
+    font: bold;
+    border: rgb(0, 0, 0);
+    /* Button elements need padding */
+    padding: 15px 15px ;
+    color: rgb(5, 5, 233);
+    background-color: gray;
+    text-align: left;
+}
+</stylesheet>
