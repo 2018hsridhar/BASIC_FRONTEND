@@ -10,11 +10,6 @@ function Goodbye(props){
   return <h1>Goodbye, {props.name}!</h1>;
 }
 
-// `export default` can be a function, class, object, or primitive value
-export { Greeting, Goodbye };
-
-// Main function to demonstrate the Greeting component
-
 function createFullNamesList() {
   const firstNames = ['Hari', 'Sophia', 'Jane', 'Julian', 'Angela'];
   const lastNames = ['Sridhar', 'Smith', 'Doe', 'Brown', 'Johnson'];
@@ -28,7 +23,11 @@ function createFullNamesList() {
     return;
   }
   console.log(`Number of names: ${numberOfNames}`);
-  namesListHTML = (
+  // const vs let vs var
+  // const : block-scoped, cannot be reassigned
+  // let : block-scoped, can be reassigned
+  // var : function-scoped, can be reassigned, hoisted
+  const namesListHTML = (
     <ol>
       {
         firstNames.map((firstName, index) => {
@@ -49,14 +48,96 @@ function createFullNamesList() {
   return namesListHTML;
 }
 
+// Add this Card component to your main.jsx file
+function Card({ title, content, imageUrl, buttonText, onButtonClick }) {
+  return (
+    <div className="card">
+      {imageUrl && (
+        <img src={imageUrl} alt={title} className="card-image" />
+      )}
+      <div className="card-content">
+        <h3 className="card-title">{title}</h3>
+        <p className="card-text">{content}</p>
+        {buttonText && (
+          <button className="card-button" onClick={onButtonClick}>
+            {buttonText}
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// Example usage function : create 3 cards with different content
+// Let's make them about National Parks in CA
+// Yosemite, Pinnacles, and Joshua Tree
+// App Idea : National Parks - share quick photos and info about each park
+function createCardsExample() {
+  // Array of card data
+  const cards = [
+    {
+      title: "Yosemite National Park",
+      content: "Explore the stunning landscapes and giant sequoias.",
+      buttonText: "Learn More",
+      onButtonClick: () => alert("Opening Yosemite guide!")
+    },
+    {
+      title: "Pinnacles National Park",
+      content: "Discover unique rock formations and diverse wildlife.",
+      buttonText: "Get Started",
+      onButtonClick: () => alert("Opening Pinnacles Guide!")
+    },
+    {
+      title: "Joshua Tree National Park",
+      content: "Experience the unique desert landscapes and iconic Joshua trees.",
+      buttonText: "Learn More",
+      onButtonClick: () => alert("Opening Joshua Tree guide!")
+    },
+  ];
+
+  const cardsHTML = (
+    // Container for the cards
+    // Why grid layout? : allows for responsive design and easy alignment of items
+    <div className="cards-container">
+      <h2>Learning Resources</h2>
+      <div className="cards-grid">
+        {cards.map((card, index) => (
+          <Card
+            key={index}
+            title={card.title}
+            content={card.content}
+            buttonText={card.buttonText}
+            onButtonClick={card.onButtonClick}
+          />
+        ))}
+      </div>
+    </div>
+  );
+  return cardsHTML;
+}
+
+// Here, we're exporting multiple named exports
+// `export default` can be a function, class, object, or primitive value
+export { Greeting, Goodbye, createFullNamesList, createCardsExample };
 
 function main() {
-  const targetHTML = createFullNamesList();
-  return targetHTML;
+  const namesListHTML = createFullNamesList();
+  const cardsHTML = createCardsExample();
+  // Combine both sections into a single JSX element
+  const combinedHTML = (
+    <div>
+      <h1>California National Parks Card Data</h1>
+      {namesListHTML}
+      {cardsHTML}
+    </div>
+  );
+  return combinedHTML;
 }
 
 // Use createRoot to render the components into the DOM
 // Assuming there's a div with id 'root' in your HTML
+// StrictMode is a tool for highlighting potential problems in an application
+// It activates additional checks and warnings for its descendants
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     {main()}
