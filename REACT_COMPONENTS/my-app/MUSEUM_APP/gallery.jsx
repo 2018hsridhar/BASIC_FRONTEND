@@ -3,6 +3,8 @@
 // React components can be defined as functions that return JSX
 
 // Importing the Profile component from a local file
+import React, { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 import Exhibit from './exhibit.jsx';
 
 // Gallery component that uses the Profile component multiple times

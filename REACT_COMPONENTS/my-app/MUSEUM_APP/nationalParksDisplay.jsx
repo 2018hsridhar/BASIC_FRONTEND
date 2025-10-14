@@ -1,6 +1,8 @@
+import React, { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 import Gallery from './gallery.jsx';
-import React from 'react';
 import Exhibit from './exhibit.jsx';
+
 
 // Data for national parks
 const nationalParksData = {
@@ -41,8 +43,8 @@ function Application() {
   );
 }
 
-function main() {
-  Application()
+function Main() {
+  return <Application />; // Add 'return' and JSX syntax
 }
 
 
@@ -52,7 +54,7 @@ function main() {
 // It activates additional checks and warnings for its descendants
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {main()}
+    <Main />  {/* Use component syntax instead of {main()} */}
   </StrictMode>
 );
 
