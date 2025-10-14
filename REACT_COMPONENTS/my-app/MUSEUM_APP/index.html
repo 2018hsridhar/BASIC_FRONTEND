@@ -1,10 +1,23 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My First React Components</title>
+    <!-- Load React and ReactDOM from CDN -->
+     <!-- ReactDOM is the package that provides DOM-specific methods that can be used at the top level of your app to enable an efficient way of managing DOM elements of the web page. -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <h1>My First React Components</h1>
+    </div>
     <!-- React components will be rendered here -->
-     <!-- type = module : allows us to use import and export statements in our JavaScript code -->
-    <script type="module" src="main.jsx"></script>
+     <!-- text/babel is used to transpile JSX code into JavaScript that browsers can understand. -->
+    <script type="text/babel" src="gallery.jsx"></script>
+    <script type="text/babel" src="nationalParksDisplay.jsx"></script>
   </body>
 </html>
 

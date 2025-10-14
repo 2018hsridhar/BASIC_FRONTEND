@@ -26,7 +26,3 @@ export default function Gallery({ imageUrls, imageTitles }) {
         </section>
     );
 }
-
-    }
-
-}
