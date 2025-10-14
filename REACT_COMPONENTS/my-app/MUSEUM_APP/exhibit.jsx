@@ -1,9 +1,9 @@
-
-export default function Exhibit() {
+// export a single primary value from a file
+export default function Exhibit({ targetImageUrl }) {
     return (
         <div className="exhibit">
             <h3>Exhibit Component</h3>
-            <p>This is an exhibit showcasing artwork or items.</p>
+            <img src={targetImageUrl} alt="Exhibit Thumbnail" />
         </div>
     );
 }

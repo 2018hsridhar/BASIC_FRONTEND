@@ -10,14 +10,23 @@ import Exhibit from './exhibit.jsx';
 // This keeps the code organized and makes it easier to manage and update individual components
 // Each component can be reused in different parts of the application
 
-
-export default function Gallery(){
+export default function Gallery({ imageUrls, imageTitles }) {
     return (
         <section>
             <h2>Gallery Management Component</h2>
-            <Exhibit />
-            <Exhibit />
-            <Exhibit />
+            {imageUrls.map((url, index) => {
+                const imageTitle = imageTitles[index];
+                return (
+                    <Section key={url}>
+                        <h1>{imageTitle}</h1>
+                        <Exhibit targetImageUrl={url} />
+                    </Section>
+                );
+            })}
         </section>
     );
+}
+
+    }
+
 }
