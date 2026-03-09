@@ -6,6 +6,5 @@ Skills under emphasis :
 3. CSS
 4. React.JS
 5. Bootstrap.JS
-7. 
 
 

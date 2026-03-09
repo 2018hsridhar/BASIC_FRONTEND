@@ -8,10 +8,9 @@
         <!-- Wait are most char encodings this? Targetting HTML5 -->
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width,initial-scale=1"/>
-        <!-- Viewport contenet -->
         <meta name="author" content="Hari Sridhar"/>
         <meta name="description" content="A Introduction Page to Hari Sridhar"/>
-        <Title>Hari Sridhar: About Me</Title>
+        <title>Hari Sridhar: About Me</title>
         <!-- #TODO : once domain registered -> get base URL in -->
         <!-- <base href="https://www.somedomain.com/hari"/> -->
         <!-- Internal CSS : one of these per each webpage rendered -->
@@ -22,20 +21,23 @@
         <style>
             body ol li { font-family: 'Courier', Courier, monospace;}
             body ul li { font-family: 'Courier', Courier, monospace;}
+            .profile 
+            { 
+                display:block; 
+                margin:20px auto; 
+                max-width:320px;
+                height:auto;
+                border-radius:8px; 
+                border:5px solid black;
+            }
         </style>
     </head>
     <header>
         <h1 style="text-align:center">A Brief Introduction</h1>
-        <!-- Pre tag can work ... but diff formatting -->
-        <!-- <p></p> tag can work ... but weird spacing problems too :-( -->
-        <!-- <p>Hello World.</p>
-        <p>My name is Hari Sridhar, I'm 26 years old, and in the past, I've primarily worked as a software engineer</p>
-        <p> across a vast swathe of companies and organizations.</p> -->
         <p style="font-family: courier; font-size: 200%;"><b>System.out.println(Hello World!)</b></p>
         <!-- implicit break with different <p> elements too! -->
-        <p>My name is Hari Sridhar, I was born in New Jersey, I am 26 years old, and I grew up in Woodbridge, Virginia about 30 minutes south of Washington D.C. In the past, I've primarily worked as a software engineer
-        across a vast swathe of companies and organizations.</p>
-        <!-- Insert picture of me later here -->
+        <p>My name is Hari Sridhar and I'm a software engineering working in sunny San Frnacisco.</p>
+        <img src="../IMAGES/PROFILE_PIC.jpg" alt="Hari Sridhar" class="profile">
     </header>
     <body>
         <h2 style="color:blue"> My past professional experiences</h2>
