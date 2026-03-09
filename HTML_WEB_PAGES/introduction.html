@@ -17,8 +17,6 @@
         <style>
             body { background-color:pink; }
             body p { font-family: 'Courier', Courier, monospace;}
-        </style>
-        <style>
             body ol li { font-family: 'Courier', Courier, monospace;}
             body ul li { font-family: 'Courier', Courier, monospace;}
             .profile 
@@ -30,6 +28,13 @@
                 border-radius:8px; 
                 border:5px solid black;
             }
+            h2 .introductions { color:blue; }
+            img .photos {
+                width: 100%;
+                height: 280px;      /* fixed card height */
+                object-fit: cover;  /* crop to fill */
+                border-radius: 6px;
+            }
         </style>
     </head>
     <header>
@@ -37,65 +42,90 @@
         <p style="font-family: courier; font-size: 200%;"><b>System.out.println(Hello World!)</b></p>
         <!-- implicit break with different <p> elements too! -->
         <p>My name is Hari Sridhar and I'm a software engineering working in sunny San Frnacisco.</p>
-        <img src="../IMAGES/PROFILE_PIC.jpg" alt="Hari Sridhar" class="profile">
+        <img src="../IMAGES/PERSONAL/PROFILE_PIC.jpg" alt="Hari Sridhar" class="profile">
     </header>
     <body>
-        <h2 style="color:blue"> My past professional experiences</h2>
-        <!-- Hard to style text if not wrapped around other tags such as <p> or <div> too -->
-        <p>
-            Some of my past experiences include internships at the following companies back as an undergraduate student : 
-        </p>
-        <ol>
-            <li>Intel</li>
-            <li>Amazon</li>
-        </ol>
-        <p>
-            And full-time employment at the following companies, in order:
-        </p>
-        <ol>
-            <li>S.W.I.F.T. srcl</li>
-            <li>Google</li>
-            <li>Capital One</li>
-        </ol>
-        <h2 style="color:blue"> My Side Hobbies </h2>
-        <p>Outside of work, when I am not to busy or pre-occupied with other matters, I enjoy pursuing the following activities :</p>
-        <ol>
-            <li>Exploring new restaurants : I am a major foodie!</li>
-            <li>Cooking and experimenting with new cuisines!</li>
-            <li>Exploring my side obsession of looking at maps.</li>
-            <li>Playing different types of games: board games, card games, or video games.</li>
-        </ol>
-        <h2 style="color:blue"> Other Side Interests of Mine</h2>
-        <p> In terms of other side interests, I enjoy reading up on the following activities</p>
-        <ol>
-            <li>Reading my favorite periodicals : <em>National Geographic</em>, <em>Popular Science</em>, <em>Popular Mechanics</em>, <em>The Economist</em>, <em>The Atlantic</em>, and <em>Nature Articles</em></li>
-            <li>Learning random science facts.</li>
-            <li>Leetcode and other algorithmic puzzle solving.</li>
-        </ol>
-    </body>
-    <br/>
-    <h2 style="color:blue">Contact Me:</h2>
-    <p>For ways to reach out to me, click on the following external websites :</p>
-    <ol>
-        <li>Facebook :  <a href="https://www.facebook.com/hari.sridhar.127/">Facebook/hari.sridhar.127</a></li>
-        <li>Twitter:    <a href="www.twitter.com">some link</a></li>
-        <li>Instagram:  <a href="https://www.instagram.com/hari.srdhr/">Instagram/hari.srdhr</a></li>
-        <li>LinkedIn:   <a href="https://www.linkedin.com/in/harisrid/">Linkedin/harisrid</a></li>
-        <li>Quora:      <a href="linked.com">some quora link</a></li>
-        <!-- Would be link for your future blog. -->
-    </ol>
-    <p>And for viewing my open source contributions and other code bases, head to the following links :</p>
-    <ol>
-        <li>Leetcode: <a href="https://leetcode.com/2018hsridhar/">Leetcode/2018hsridhar</a></li>
-        <li>Github : <a href="https://github.com/2018hsridhar">Github/2018hsridhar</a></li>
-    </ol>
-    <p> And for reach out to me via e-mail</p>
-    <ol>
-        <li>Non-work related emails : <a href="hari.srdhr@gmail.com">hari.srdhr@gmail.com</a></li>
-        <li>Work related emails : <a href="hari.h.sridhar@gmail.com">hari.h.sridhar@gmail.com</a></li>
-    </ol>
+        <div id="Professional Experience">
+            <h2 style="color:blue"> My past professional experiences</h2>
+            <!-- Hard to style text if not wrapped around other tags such as <p> or <div> too -->
+            <p>
+                Some of my past experiences include internships at the following companies back as an undergraduate student : 
+            </p>
+            <ol>
+                <li>Intel</li>
+                <li>Amazon</li>
+            </ol>
+            <p>
+                And full-time employment at the following companies, in order:
+            </p>
+            <ol>
+                <li>S.W.I.F.T. srcl</li>
+                <li>Google</li>
+                <li>Capital One</li>
+            </ol>
+        </div>
+        <div id="Hobbies and Interests">
+            <h2 style="color:blue"> My Side Hobbies </h2>
+            <p>Outside of work, when I am not to busy or pre-occupied with other matters, I enjoy pursuing the following activities :</p>
+            <ol>
+                <li>Exploring new restaurants : I am a major foodie!</li>
+                <li>Cooking and experimenting with new cuisines!</li>
+                <li>Exploring my side obsession of looking at maps.</li>
+                <li>Playing different types of games: board games, card games, or video games.</li>
+            </ol>
+            <h2 style="color:blue"> Other Side Interests of Mine</h2>
+            <p> In terms of other side interests, I enjoy reading up on the following activities</p>
+            <ol>
+                <li>Reading my favorite periodicals : <em>National Geographic</em>, <em>Popular Science</em>, <em>Popular Mechanics</em>, <em>The Economist</em>, <em>The Atlantic</em>, and <em>Nature Articles</em></li>
+                <li>Learning random science facts.</li>
+                <li>Leetcode and other algorithmic puzzle solving.</li>
+            </ol>
+        </div>
+        <br/>
+        <div id="Contact Me">
+            <h2>Contact Me:</h2>
+            <p>For ways to reach out to me, click on the following external websites :</p>
+            <ol>
+                <li>Facebook :  <a href="https://www.facebook.com/hari.sridhar.127/">Facebook/hari.sridhar.127</a></li>
+                <li>Twitter:    <a href="www.twitter.com">some link</a></li>
+                <li>Instagram:  <a href="https://www.instagram.com/hari.srdhr/">Instagram/hari.srdhr</a></li>
+                <li>LinkedIn:   <a href="https://www.linkedin.com/in/harisrid/">Linkedin/harisrid</a></li>
+                <li>Quora:      <a href="linked.com">some quora link</a></li>
+                <!-- Would be link for your future blog. -->
+            </ol>
+            <p>And for viewing my open source contributions and other code bases, head to the following links :</p>
+            <ol>
+                <li>Leetcode: <a href="https://leetcode.com/2018hsridhar/">Leetcode/2018hsridhar</a></li>
+                <li>Github : <a href="https://github.com/2018hsridhar">Github/2018hsridhar</a></li>
+            </ol>
+            <p> And for reach out to me via e-mail</p>
+            <ol>
+                <li>Non-work related emails : <a href="hari.srdhr@gmail.com">hari.srdhr@gmail.com</a></li>
+                <li>Work related emails : <a href="hari.h.sridhar@gmail.com">hari.h.sridhar@gmail.com</a></li>
+            </ol>
+        </div>
+        <div id="The Places I've Been">
+            <h2 class="introductions">The Places I've Been</h2>
+            <p> I've been very fortunate to have had the oppurtunity to travel many different parts of the world. Here's some of my favorite places visited!</p>
+            <ol>
+                <li>Japan : The Bullet Train experience was incredible!</li>
+                <li>Korea : Seoul in winter time was a magical experience!</li>
+                <li>Uruguay : Montevideo and Punta del Este were relaxing and laid back!</li>
+                <li>Argentina : The asado meat and Tango dancing shows were unforgettable!</li>
+                <li>Chile : The Atacama desert felt breathtaking!</li>
+            </ol>
+            <div class="photos">
+                <img src="IMAGES/TRAVEL/ATACAMA.jpg" alt="ATACAMA" loading="lazy">
+                <img src="IMAGES/TRAVEL/BUENOS_AIRES.jpg" alt="BUENOS AIRES" loading="lazy">
+                <img src="IMAGES/TRAVEL/DENVER.jpg" alt="DENVER" loading="lazy">
+                <img src="IMAGES/TRAVEL/MONTEVIDEO.jpg" alt="MONTEVIDEO" loading="lazy">
+                <img src="IMAGES/TRAVEL/PUNTA_DEL_ESTE.jpg" alt="PUNTA DEL ESTE" loading="lazy">
+                <img src="IMAGES/TRAVEL/SANTIAGO.jpg" alt="SANTIAGO" loading="lazy">
+            </div>
+        </div>
     <!-- Can add height -> but how to get to entirety of rendered page -->
-    <footer style="background-color: blue; height: 100px;"">
+    </body>
+    <footer style="background-color: blue; height: 100px;">
     </footer>
 </html>
 
