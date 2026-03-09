@@ -81,20 +81,40 @@
             color: blue;
             background-color: yellowgreen;
         }
-        .op {
-            display: block;
-        }
          /* Flexbox for wrapper of elements */
         #wrapper {
             display:flex;
+        }
+        div .container {
+            display:flex;
+            flex-direction:column;
+            grid-template-columns: auto auto auto auto;
+            gap: 20px;
+            margin-right: 20px;
+            background-color: lightblue;
+        }
+        div .container-hoz {
+            display:flex;
+            flex-direction:row;
+            grid-template-columns: auto;
+            gap: 20px;
+            margin-right: 20px;
+            background-color: green;
+        }
+        button {
+            padding: 10px 10px 10px 10px;
+            font-weight: 500;
+            background:lightblue;
+            border:2px solid black;
+            cursor:progress;
         }
     </style>
     <title>A basic calculator application.</title>
     <!-- Scope down to two operands single operation mode -->
 </head>
 <body>
-    <h1 id="HeadingOne"> A basic calculator application</h1>
-    <div id="wrapper">
+    <h1 id="HeadingOne">Calculator</h1>
+    <div id="wrapper" class="container">
         <div id="numbers">
             <div id="buttonGroupOne">
                 <button id="buttonOne" onclick="append(1)">1</button>
@@ -104,24 +124,27 @@
             <div id="buttonGroupTwo">
                 <button id="buttonFour" onclick="append(4)">4</button>
                 <button id="buttonFive" onclick="append(5)">5</button>
-                <button id="buttonFive" onclick="append(6)">6</button>
+                <button id="buttonSix" onclick="append(6)">6</button>
             </div>
             <div id="buttonGroupThree">
                 <button id="buttonSeven" onclick="append(7)">7</button>
                 <button id="buttonEight" onclick="append(8)">8</button>
                 <button id="buttonNine" onclick="append(9)">9</button>
             </div>
-            <div id="answerBox">
-                <!-- Inline CSS input field here? HUH? -->
-                <input type="number" id="answer" placeholder="NUM" style="width:40px"/>
-                <button id="buttonEqual" onclick="equals()">=</button>
-            </div>
         </div>
-        <div id="buttonGroupOps">
-            <button class="op" id="buttonAdd" onclick="add()">+</button>
-            <button class="op" id="buttonSubtract" onclick="sub()">-</button>
-            <button class="op" id="buttonMultiply" onclick="mult()">*</button>
-            <button class="op" id="buttonDiv" onclick="div()">/</button>
+    </div>
+    <br/>
+    <div class="container-hoz" id="buttonGroupOps">
+        <button class="op" id="buttonAdd" onclick="add()">+</button>
+        <button class="op" id="buttonSubtract" onclick="sub()">-</button>
+        <button class="op" id="buttonMultiply" onclick="mult()">*</button>
+        <button class="op" id="buttonDiv" onclick="div()">/</button>
+    </div>
+    <br/>
+    <div>
+        <div id="answerBox">
+            <input type="number" id="answer" placeholder="NUM" style="width:40px"/>
+            <button id="buttonEqual" onclick="equals()">=</button>
         </div>
     </div>
 </body>
