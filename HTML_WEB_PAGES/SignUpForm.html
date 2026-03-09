@@ -1,66 +1,53 @@
-<!-- First time writing HTML ( coming in with BE engineering exp )   -->
-<!-- Write your code here. -->
-
-<!-- Delete this line. -->
 <head>
-  
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>A basic HTML sign-up form</title>
 </head>
 <body>
-<!--   Woooh only doc body here -->
-<!--   Setting up the front end form -->
-<!--   Need way to enable submission of form - button - send data to server -->
-
-<!--   HTML sign-up forms -->
-<!--   Send vals via POST request body -->
-<!--   Set form submit action -->
-<!-- <form action="/myapi" method="POST"> -->
-<form>
-    <label for="username">Username:</label>
-  <!--   Attrs own line for readability -->
-    <input id="username" 
-      type="text" 
-      placeholder="Enter Username" 
-      name="username"
-      required="required"/>
-  
-    <!--   Lengthy pwd form-validation -->
-    <!--   required attr : not a (k,v) pairing : bool attr :-) -->
-    <label for="password">Password:</label>
-    <input id="password" 
-      type="password" 
-      placeholder="Enter Password" 
-      name="password" 
-      minlength=6 
-      required/>
-  
-    <!-- required vs optional fields    -->
-    <!-- No mail type here   -->
-    <label for="email">Email:</label>
-    <input id="email" 
-      type="email" 
-      placeholder="Enter Email"
-      name="email"
-      required />
-  
-    <!-- ids : label->input assocs -->
-    <label for="phoneNumber">Phone Number:</label>
-    <input id="phoneNumber" 
-      type="tel" 
-      placeholder="Enter Phone Number"
-      name="phoneNumber" />
-    
-  
-    <!--  Oooh date picker UIs -->
-    <label for="DateOfBirth">Date of Birth:</label>
-    <input id="DateOfBirth" type="date" />
-  
-    <label for="checkbox">I agree to the TOS</label>
-    <input id="checkbox" type="checkbox" required />
-  
-    <!-- Be consistent : button tag nicer. -->
-    <!-- Tell server what the data is too -->
-    <!-- dflt bwsr behavior submission?    -->
-    <!-- Auto submit parent forms ?    -->
-    <button>Sign Up</button>
-</form>
+<div id="End User Form">
+  <form>
+      <div id="username">
+        <label for="username">Username:</label>
+        <input id="username" 
+          type="text" 
+          placeholder="Enter Username" 
+          name="username"
+          required="required"/>
+      </div>
+      <div id="password">
+        <label for="password">Password:</label>
+        <input id="password" 
+          type="password" 
+          placeholder="Enter Password" 
+          name="password" 
+        minlength="6" 
+        required/>
+      </div>
+      <div id="email">
+        <label for="email">Email:</label>
+        <input id="email" 
+          type="email" 
+          placeholder="Enter Email"
+          name="email"
+        required />
+      </div>
+      <div id="phoneNumber">
+        <label for="phoneNumber">Phone Number:</label>
+        <input id="phoneNumber" 
+          type="tel" 
+          placeholder="Enter Phone Number"
+          name="phoneNumber" />
+      </div>
+      <div id="Date Of Birth">
+        <label for="DateOfBirth">Date of Birth:</label>
+        <input id="DateOfBirth" type="date" />
+      </div>
+      <div id="TermsOfService">
+        <label for="checkbox">I agree to the TOS</label>
+        <input id="checkbox" type="checkbox" required />
+      </div>
+      <button type="submit">Sign Up</button>
+      <button type="reset">Clear</button>
+  </form>
+</div>
 </body>
